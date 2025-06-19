@@ -11,18 +11,6 @@ Projeto de simulação de um **algoritmo genético** para resolver problemas de 
 - Evolução por gerações
 - Impressão da melhor solução por geração
 
-## Estrutura do Projeto
-algoritmo-genetico-java/
-├── pom.xml
-└── src/
-    └── main/
-        └── java/
-            └── com.wallaks.algoritmo_genetico_java/
-                ├── Main.java
-                ├── AlgoritmoGenetico.java
-                ├── Individuo.java
-                └── Produto.java
-
 ## Lógica
 Dado um conjunto de produtos com **valor** e **espaço ocupado**, o algoritmo busca a melhor combinação possível dentro de um limite de espaço definido. O resultado final exibe os produtos escolhidos e o valor total da solução.
 
