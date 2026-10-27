@@ -77,12 +77,15 @@ public class AlgoritmoGenetico {
             Double somaAvaliacao = this.somaAvaliacoes();
             List<Individuo> novaPopulacao = new ArrayList<>();
 
-            for (int i = 0; i < this.populacao.size() / 2; ++i) {
+            while (novaPopulacao.size() < this.tamanhoPopulacao) {
                 int pai1 = this.selecionaPai(somaAvaliacao);
                 int pai2 = this.selecionaPai(somaAvaliacao);
                 List<Individuo> filhos = this.populacao.get(pai1).crossover(this.populacao.get(pai2));
-                novaPopulacao.add(filhos.get(0).mutacao(taxaMutacao));
-                novaPopulacao.add(filhos.get(1).mutacao(taxaMutacao));
+                for (Individuo filho : filhos) {
+                    if (novaPopulacao.size() < this.tamanhoPopulacao) {
+                        novaPopulacao.add(filho.mutacao(taxaMutacao));
+                    }
+                }
             }
 
             this.setPopulacao(novaPopulacao);

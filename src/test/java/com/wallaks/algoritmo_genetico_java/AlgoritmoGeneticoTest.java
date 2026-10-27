@@ -73,6 +73,15 @@ class AlgoritmoGeneticoTest {
     }
 
     @Test
+    void populacaoImparMantemOTamanhoEmTodasAsGeracoes() {
+        AlgoritmoGenetico algoritmo = new AlgoritmoGenetico(3);
+
+        algoritmo.resolver(0.05, 10, espacos, valores, 3.0);
+
+        assertEquals(3, algoritmo.getPopulacao().size());
+    }
+
+    @Test
     void resolverDevolveUmGenePorProduto() {
         AlgoritmoGenetico algoritmo = new AlgoritmoGenetico(10);
 
